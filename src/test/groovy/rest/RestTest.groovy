@@ -28,11 +28,11 @@ class RestTest {
 	
 	@Test
 	def test2() {
-		def client = new RESTClient('http://it-ebooks-api.info/v1')
+		def client = new RESTClient('http://it-ebooks-api.info/v1/')
 		def resp = client.get (
-						path: '/search/jvm',
+						path: 'search/jvm',
 					)
-		Assert.assertTrue(resp.status == 200 && resp.Books[1].Description.contains('Jruby'))
+		Assert.assertTrue(resp.status == 200 && resp.getData().Books[1].Description.contains('JRuby'))
 	}
 
 }
